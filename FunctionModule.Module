@@ -1,0 +1,19 @@
+local UtilityModule = {}
+
+function UtilityModule.VerifyGame()
+    local Experience = loadstring(game:HttpGet("https://raw.githubusercontent.com/Yumiara/NewCMain/main/GameCheck.lua"))()
+    local VerifyGameTable = loadstring(game:HttpGet("https://raw.githubusercontent.com/Yumiara/NewCMain/main/VerifyGame"))()
+    if table.find(VerifyGameTable, Experience) then
+        return true
+    end
+end
+
+function UtilityModule.Warn(message)
+    warn(message)
+end
+
+function UtilityModule.Error(message)
+    error(message)
+end
+
+return UtilityModule
