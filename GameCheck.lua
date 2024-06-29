@@ -1,5 +1,5 @@
 getgenv().ScriptName = nil
-placeid = game.PlaceId
+placeId = game.PlaceId
 task.wait()
 if placeId == 6296321810 or placeId == 6479231833 or placeId == 6301638949 or placeId == 6480994221 then
     getgenv().ScriptName = "The Mimic" --b1c1
@@ -28,52 +28,41 @@ elseif placeId == 7618863566 then
 elseif placeId == 6243699076 then
     getgenv().ScriptName = "The Mimic" --lobby
 end
-wait()
 if placeId == 3475397644 or placeId == 5391312853 or placeId == 3752680052 or placeId == 4174118306 or placeId == 3475419198 or placeId == 3475422608 or placeId == 4601778915 or placeId == 4869039553 or placeId == 5777228223 or placeId == 3623549100 or placeId == 3737848045 or placeId == 3487210751 or placeId == 4728805070 or placeId == 5777228223 then
     getgenv().ScriptName = "Dragon Adventure" --Normal World
 end
-wait()
 if placeId == 16556777270 then
     getgenv().ScriptName = "HEDE RNG"
 end
-wait()
 if placeId == 15532962292 then
     getgenv().ScriptName = "SOL RNG"
 end
-wait()
 if placeId == 537413528 then
     getgenv().ScriptName = "BABFT"
 end
-wait()
 if placeId == 16524008257 then
     getgenv().ScriptName = "Anime RNG"
 end
-wait()
 if placeId == 16778527574 then
     getgenv().ScriptName = "Anime Rarity"
 end
-wait()
 if placeId == 16408177303 then
     getgenv().ScriptName = "Anime Roulette"
 end
-wait()
 if placeId == 16256372659 or placeId == 16228316919 or placeId == 16942077161 or placeId == 16303465041 or placeId == 16584009082 then
     getgenv().ScriptName = "Stock Up"
 end
-wait()
 if placeId == 893973440 then
     getgenv().ScriptName = "FTF"
 end
-wait()
 if placeId == 16389395869 or placeId == 16389398622 then
     getgenv().ScriptName = "ADT"
 end
-wait()
 if placeId == 15214140740 then
     getgenv().ScriptName = "UTS"
 end
 task.wait()
-if getgenv().ScriptName ~= nil then 
+if getgenv().ScriptName ~= nil then
     return getgenv().ScriptName
 else
     game:GetService("Players").LocalPlayer:Kick("Unsupported Experience")
