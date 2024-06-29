@@ -1,4 +1,5 @@
 getgenv().ScriptName = nil
+placeid = game.PlaceId
 task.wait()
 if placeId == 6296321810 or placeId == 6479231833 or placeId == 6301638949 or placeId == 6480994221 then
     getgenv().ScriptName = "The Mimic" --b1c1
