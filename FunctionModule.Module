@@ -8,8 +8,12 @@ function UtilityModule.VerifyGame()
     end
 end
 
-function UtilityModule.Warn(message)
-    warn(message)
+function UtilityModule.RequestFunction()
+    if hookmetamethod and hookfunction and newcclosure and getnamecallmethod then
+        return true
+    else
+        return false
+    end
 end
 
 function UtilityModule.Error(message)
