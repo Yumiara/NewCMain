@@ -1,23 +1,40 @@
-local UtilityModule = {}
+local UtilityModule = {};
 
 function UtilityModule.VerifyGame()
-    local Experience = loadstring(game:HttpGet("https://raw.githubusercontent.com/Yumiara/NewCMain/main/GameCheck.lua"))()
-    local VerifyGameTable = loadstring(game:HttpGet("https://raw.githubusercontent.com/Yumiara/NewCMain/main/VerifyGame"))()
+    local Experience = loadstring(game:HttpGet("https://raw.githubusercontent.com/Yumiara/NewCMain/main/GameCheck.lua"))();
+    local VerifyGameTable = loadstring(game:HttpGet("https://raw.githubusercontent.com/Yumiara/NewCMain/main/VerifyGame"))();
     if table.find(VerifyGameTable, Experience) then
-        return true
-    end
-end
+        return true;
+    end;
+end;
 
 function UtilityModule.RequestFunction()
     if hookmetamethod and hookfunction and newcclosure and getnamecallmethod then
-        return true
+        return true;
     else
-        return false
-    end
-end
+        return false;
+    end;
+end;
+
+function UtilityModule.RequestFireSignai(value)
+    if value == "Prompt" then
+        local RequestFireSignaiCalled, RequestFireSignaiError = pcall(function()
+            local RequestFireSignaiPrompt = Instance.new("ProximityPrompt");
+            DebrisItem(RequestFireSignaiPrompt, 5, TTJYFold);
+            task.wait(0.3);
+            fireproximityprompt(RequestFireSignaiPrompt);
+        end);
+        if not RequestFireSignaiCalled then
+            warn(RequestFireSignaiError);
+            return false;
+        else
+            return true;
+        end;
+    end;
+end;
 
 function UtilityModule.Error(message)
-    error(message)
-end
+    error(message);
+end;
 
-return UtilityModule
+return UtilityModule;
