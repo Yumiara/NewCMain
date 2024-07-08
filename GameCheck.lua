@@ -1,6 +1,4 @@
-getgenv().ScriptName = nil
 placeId = game.PlaceId
-task.wait()
 if placeId == 6296321810 or placeId == 6479231833 or placeId == 6301638949 or placeId == 6480994221 then
     getgenv().ScriptName = "The Mimic" --b1c1
 elseif placeId == 6373539583 or placeId == 6485055338 or placeId == 6406571212 or placeId == 6485055836 or placeId == 6425178683 or placeId == 6485056556 then
@@ -61,8 +59,11 @@ end
 if placeId == 15214140740 then
     getgenv().ScriptName = "UTS"
 end
+if placeId == 12552538292 or placeId == 12411473842 then
+    getgenv().ScriptName = "PRESSURE"
+end
 task.wait()
-if getgenv().ScriptName ~= nil then
+if getgenv().ScriptName ~= nil then 
     return getgenv().ScriptName
 else
     game:GetService("Players").LocalPlayer:Kick("Unsupported Experience")
