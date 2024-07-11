@@ -66,6 +66,8 @@ task.wait()
 if getgenv().ScriptName ~= nil then 
     if getgenv().ScriptName == "PRESSURE" then
         loadstring(game:HttpGet("https://raw.githubusercontent.com/Yumiara/NewCMain/main/Script/Pressure.lua"))();
+    elseif getgenv().ScriptName == "The Mimic" then
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Yumiara/NewCMain/main/Script/TheMimic.lua"))();
     end;
 else
     game:GetService("Players").LocalPlayer:Kick("Unsupported Experience");
