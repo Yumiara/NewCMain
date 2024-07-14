@@ -3838,7 +3838,7 @@ function GJOSKWF()
                     ["lucide-eye"] = "rbxassetid://10723346959",
                     ["lucide-eye-off"] = "rbxassetid://10723346871",
                     ["lucide-factory"] = "rbxassetid://10723347051",
-                    ["lucide-dna"] = "rbxassetid://18455530257"
+                    ["lucide-dna"] = "rbxassetid://18455530257",
                     ["lucide-fan"] = "rbxassetid://10723354359",
                     ["lucide-fast-forward"] = "rbxassetid://10723354521",
                     ["lucide-feather"] = "rbxassetid://10723354671",
