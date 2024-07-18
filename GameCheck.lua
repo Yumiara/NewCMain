@@ -53,7 +53,7 @@ end
 if placeId == 893973440 then
     getgenv().ScriptName = "FTF"
 end
-if placeId == 16389395869 or placeId == 16389398622 then
+if placeId == 16389395869 or placeId == 16389398622 or placeId == 17527914941 then
     getgenv().ScriptName = "ADT"
 end
 if placeId == 15214140740 then
