@@ -76,6 +76,8 @@ if getgenv().ScriptName ~= nil then
         loadstring(game:HttpGet("https://raw.githubusercontent.com/Yumiara/NewCMain/main/Script/StockUp.lua"))();
     elseif getgenv().ScriptName == "ADT" then
         loadstring(game:HttpGet("https://raw.githubusercontent.com/Yumiara/NewCMain/main/Script/ADT.lua"))();
+    elseif getgenv().ScriptName == "BABFT" then
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Yumiara/NewCMain/main/Script/BABFT.lua"))();
     end;
 else
     game:GetService("Players").LocalPlayer:Kick("Unsupported Experience");
