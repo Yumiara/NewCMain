@@ -1,12 +1,3 @@
---[[
-    Fluent Interface Suite
-    This script is not intended to be modified.
-    To view the source code, see the 'src' folder on GitHub!
-
-    Author: dawid
-    License: MIT
-    GitHub: https://github.com/dawid-scripts/Fluent
---]]
 function GJOSKWF()
     local a, b = {
         {
@@ -1705,6 +1696,7 @@ function GJOSKWF()
                     {
                         Size = UDim2.new(1, -t.TabWidth - 32, 1, -102),
                         Position = UDim2.fromOffset(t.TabWidth + 26, 90),
+                        GroupTransparency = 1,
                         BackgroundTransparency = 1
                     }
                 )
@@ -2014,7 +2006,8 @@ function GJOSKWF()
                         CanvasGroup = {
                             BackgroundColor3 = Color3.new(1, 1, 1),
                             BorderColor3 = Color3.new(0, 0, 0),
-                            BorderSizePixel = 0
+                            BorderSizePixel = 0,
+                            GroupTransparency = 1
                         }
                     }
                 }
@@ -3838,7 +3831,7 @@ function GJOSKWF()
                     ["lucide-eye"] = "rbxassetid://10723346959",
                     ["lucide-eye-off"] = "rbxassetid://10723346871",
                     ["lucide-factory"] = "rbxassetid://10723347051",
-                    ["lucide-dna"] = "rbxassetid://18455530257",
+                    ["lucide-dna"] = "rbxassetid://18455530257"
                     ["lucide-fan"] = "rbxassetid://10723354359",
                     ["lucide-fast-forward"] = "rbxassetid://10723354521",
                     ["lucide-feather"] = "rbxassetid://10723354671",
@@ -5555,4 +5548,5 @@ function GJOSKWF()
         end
     end
 end
+
 return GJOSKWF()
