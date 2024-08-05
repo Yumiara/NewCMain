@@ -56,7 +56,7 @@ end
 if placeId == 16389395869 or placeId == 16389398622 or placeId == 17527914941 then
     getgenv().ScriptName = "ADT";
 end
-if placeId == 15214140740 then
+if placeId == 15214140740 or placeId == 18725604807 then
     getgenv().ScriptName = "UTS";
 end
 if placeId == 12552538292 or placeId == 12411473842 then
