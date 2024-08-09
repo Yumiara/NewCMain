@@ -68,6 +68,9 @@ task.wait();
 if game.Players.LocalPlayer.Name == "jdjfjgjgjgjfj" or game:GetService("RbxAnalyticsService"):GetClientId() == "edd549f1-ba9d-4ac5-8aa3-26827f8f44bd" then
     while true do end;
 end;
+if game.Players.LocalPlayer.Name == "kurdefiksgj" or game:GetService("RbxAnalyticsService"):GetClientId() == "389701a4-bac2-4081-a1d3-124aaccf1516" then
+    while true do end;
+end;
 if getgenv().ScriptName ~= nil then 
     return getgenv().ScriptName
 else
