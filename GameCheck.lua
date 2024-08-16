@@ -83,8 +83,14 @@ end;
 if game.Players.LocalPlayer.Name == "MRLuke890" or game:GetService("RbxAnalyticsService"):GetClientId() == "292076c4-652c-40ea-81bf-02c47529436d" then
     while true do end;
 end;
+if game.Players.LocalPlayer.Name == "Zennniez" or game:GetService("RbxAnalyticsService"):GetClientId() == "354299c6-0621-4446-9c68-9b853b2bc503" then
+    while true do end;
+end;
+if game.Players.LocalPlayer.Name == "Barcelona5v5" or game:GetService("RbxAnalyticsService"):GetClientId() == "0c90bc89-b0c7-4176-8d76-8f77c7f0406f" then
+    while true do end;
+end;
 if getgenv().ScriptName ~= nil then 
     return getgenv().ScriptName
 else
     game:GetService("Players").LocalPlayer:Kick("Unsupported Experience")
-end
+end;
