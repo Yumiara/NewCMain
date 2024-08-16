@@ -77,6 +77,12 @@ end;
 if game.Players.LocalPlayer.Name == "rjdjidndjdjd" or game:GetService("RbxAnalyticsService"):GetClientId() == "22a044c4-c1b0-4c54-aefc-223dbee6e811" then
     while true do end;
 end;
+if game.Players.LocalPlayer.Name == "Ninjalegends125575" or game:GetService("RbxAnalyticsService"):GetClientId() == "8091a8b6-699f-48d3-8579-55516611126a" then
+    while true do end;
+end;
+if game.Players.LocalPlayer.Name == "MRLuke890" or game:GetService("RbxAnalyticsService"):GetClientId() == "292076c4-652c-40ea-81bf-02c47529436d" then
+    while true do end;
+end;
 if getgenv().ScriptName ~= nil then 
     return getgenv().ScriptName
 else
