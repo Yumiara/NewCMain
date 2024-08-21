@@ -1,0 +1,783 @@
+local abcd, efgh = pcall(function()
+
+local TeleportSeat = function(A)
+
+    game.Players.LocalPlayer.Character.Humanoid.SeatPart.Parent:SetPrimaryPartCFrame(CFrame.new(A))
+
+end
+
+local VirtualInputManager = game:GetService('VirtualInputManager')
+
+
+
+function keyPress(Key, Press)
+
+   VirtualInputManager:SendKeyEvent(Press, Key, false, game)
+
+end
+
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+
+local CoreGui = game:GetService("CoreGui")
+
+local HttpService = game:GetService("HttpService")
+
+local VirtualUser = game:GetService("VirtualUser")
+
+local Players = game:GetService("Players")
+
+local Workspace = game:GetService("Workspace")
+
+local VirtualInputManager = game:GetService("VirtualInputManager")
+
+local StarterGui = game:GetService("StarterGui")
+
+
+
+local Player = Players.LocalPlayer
+
+local wait = task.wait 
+
+local spawn = task.spawn
+
+local TweenBM = function(A, B, C)
+
+    if A and B then
+
+        local Time = (B.Position - A.Position).Magnitude / C 
+
+        local Info = TweenInfo.new(Time, Enum.EasingStyle.Linear)
+
+        local Tween = TweenService:Create(A, Info, {CFrame = CFrame.new(B.Position)})
+
+        Tween:Play()
+
+        Tween.Completed:Wait()
+
+    end
+
+    return A, B, C
+
+end
+
+if game.CoreGui:FindFirstChild("DA-TTJY") then
+
+    local ddddddddestroy = game.CoreGui["DA-TTJY"]
+
+    ddddddddestroy:Destroy()
+
+end
+
+    task.wait()
+
+    -- init
+
+    local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/zxciaz/VenyxUI/main/Reuploaded"))()
+
+    local venyx = library.new("DA-TTJY", 5013109572)
+
+    
+
+    devmode = true
+
+    -- themes
+
+    local themes = {
+
+        Background = Color3.fromRGB(24, 24, 24),
+
+        Glow = Color3.fromRGB(0, 0, 0),
+
+        Accent = Color3.fromRGB(10, 10, 10),
+
+        LightContrast = Color3.fromRGB(20, 20, 20),
+
+        DarkContrast = Color3.fromRGB(14, 14, 14),  
+
+        TextColor = Color3.fromRGB(255, 255, 255)
+
+    }
+
+    local page = venyx:addPage("Dev Mode", 5012544693)
+
+    local section1 = page:addSection("Dont Click Anything if You Are Not TTJY or Ban")
+
+    section1:addButton("CFPos", function()
+
+    if devmode == true then
+
+            hrd = game.Players.LocalPlayer.Character.HumanoidRootPart
+
+			setclipboard(tostring(hrd.Position))
+
+        else
+
+            game.Players.LocalPlayer:Kick("You were Ban from this game,no expire(HWDUWAO-23DJWI2-AOW2DKW)")
+
+        end
+
+    end)
+
+
+
+local GetConnections = function(A, B)
+
+    for i,v in pairs(getconnections(A[tostring(B)])) do
+
+        v:Fire()
+
+    end 
+
+end
+
+local RF, RE, SH, CE
+
+for i,v in next, getgc() do
+
+    if type(v) == "function" and islclosure(v) then
+
+        if debug.getinfo(v).name == "GetRemoteFunction" then
+
+            RF = v 
+
+        elseif debug.getinfo(v).name == "GetRemoteEvent" then
+
+            RE = v
+
+        elseif debug.getinfo(v).name == "_startHarvest" then
+
+            SH = v
+
+        elseif debug.getinfo(v).name == "attemptToClaimEgg" then
+
+            CE = v
+
+        end
+
+    end
+
+end
+
+local Player = game:GetService("Players").LocalPlayer
+
+Player.PlayerGui.NodeGui.BoostFrame.ChildAdded:Connect(
+
+    function(v)
+
+        if v:IsA("Frame") and v:FindFirstChild("ClickButton") then
+
+            wait(0.5)
+
+            GetConnections(v.ClickShadowButton,"MouseButton1Down") 
+
+        end
+
+    end
+
+)
+
+local beenclick1 = false
+
+local beenclickevent1 = false
+
+local beenclickevent2 = false
+
+local beenclickevent3 = false
+
+local beenclickevent4 = false
+
+local beenclickevent5 = false
+
+local page = venyx:addPage("Main", 5012544693)
+
+local section1 = page:addSection("Event")
+
+section1:addButton("Auto Plant", function()
+
+    if beenclickevent1 == false then
+
+        beenclickevent1 = true
+
+        task.wait()
+
+        spawn(function()
+
+            while wait() and beenclickevent1 do
+
+                pcall(function()
+
+                    local Tar = nil
+
+                    for i,v in next, game.Workspace.Terrain:GetChildren() do
+
+                        if v.Name == "SolsticeFlower" and v.StepsCompleted.Value ~= v.StepsCompleted.MaxSteps.Value then
+
+                            Tar = v
+
+                            break
+
+                        end
+
+                    end
+
+                    for i,v in next, game.Workspace.Terrain:GetChildren() do
+
+                        local String = string.split(v.Name, "Item")[1]
+
+                        if string.find(Tar.RequiredItem.Value, String) and v.Active.Value then
+
+                            for i=1, 50 do wait()
+
+                                TeleportSeat(v.CFrame.Position)
+
+                            end
+
+                            task.wait(0.8)
+
+                            RE("GrabItemRemote"):FireServer(v)
+
+                            break
+
+                        end
+
+                    end
+
+                    for i=1, 50 do wait()
+
+                        TeleportSeat(Tar.CFrame.Position + Vector3.new(0,10,0))
+
+                    end
+
+                    task.wait(0.8)
+
+                    RF("UseItemOnFlowerRemote"):InvokeServer(Tar)
+
+                    task.wait(0.8)
+
+                end)
+
+            end
+
+        end)
+
+    else
+
+    	beenclickevent1 = false
+
+    end
+
+end)
+
+section1:addButton("Auto Start Chaose Flower", function()
+
+    if beenclickevent2 == false then
+
+        beenclickevent2 = true
+
+        task.wait()
+
+        spawn(function()
+
+            while wait() and beenclickevent2 do
+
+                pcall(function()
+
+                    local Tar = nil
+
+                    for i,v in next, workspace.Interactions.SolsticeEvent.ChaosFlower:GetChildren() do
+
+                        if v.Name == "FlowerModel" and v.StepsCompleted.Value ~= v.StepsCompleted.MaxSteps.Value then
+
+                            Tar = v
+
+                            break
+
+                        end
+
+                    end
+
+                    for i,v in next, game.Workspace.Terrain:GetChildren() do
+
+                        local String = string.split(v.Name, "Item")[1]
+
+                        if string.find(Tar.RequiredItem.Value, String) and v.Active.Value then
+
+                            for i=1, 50 do wait()
+
+                                TeleportSeat(v.CFrame.Position)
+
+                            end
+
+                            task.wait(0.8)
+
+                            RE("GrabItemRemote"):FireServer(v)
+
+                            break
+
+                        end
+
+                    end
+
+                    for i=1, 50 do wait()
+
+                        TeleportSeat(Tar.ButtonPart.CFrame.Position + Vector3.new(0,10,0))
+
+                    end
+
+                    task.wait(0.8)
+
+                    RF("UseItemOnFlowerRemote"):InvokeServer(Tar)
+
+                    task.wait(0.8)
+
+                end)
+
+            end
+
+        end)
+
+    else
+
+    	beenclickevent2 = false
+
+    end
+
+end)
+
+
+
+section1:addButton("Auto Collect Ice Cream", function()
+
+    if beenclickevent3 == false then
+
+        beenclickevent3 = true
+
+        task.wait()
+
+        game:GetService("ReplicatedStorage").Remotes.StartPenguinRemote:InvokeServer()
+
+        task.wait(2)
+
+        for _,v in pairs(game.workspace.Interactions.SolsticeEvent.FindObjects:GetDescendants()) do
+
+            if v.Name == "BasePart" and v.Transparency == 0 then
+
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
+
+                task.wait(2)
+
+                keyPress(Enum.KeyCode.E, true)
+
+            end
+
+        end
+
+        task.wait(0.8)
+
+        for _,v in pairs(game.workspace.Interactions.SolsticeEvent.FindObjects:GetDescendants()) do
+
+            if v.Name == "BasePart" and v.Transparency == 0 then
+
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
+
+                task.wait(1)
+
+                keyPress(Enum.KeyCode.E, true)
+
+            end
+
+        end
+
+        task.wait(0.8)
+
+        for _,v in pairs(game.workspace.Interactions.SolsticeEvent.FindObjects:GetDescendants()) do
+
+            if v.Name == "BasePart" and v.Transparency == 0 then
+
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
+
+                task.wait(1)
+
+                keyPress(Enum.KeyCode.E, true)
+
+            end
+
+        end
+
+        task.wait(0.8)
+
+    else
+
+    	beenclickevent3 = false
+
+    end
+
+end)
+
+section1:addButton("Auto Collect Star", function()
+
+    if beenclickevent4 == false then
+
+        beenclickevent4 = true
+
+        task.wait()
+
+        spawn(function()
+
+            while wait() and beenclickevent4 do
+
+                pcall(function()
+
+                    for _,v in pairs(workspace.Interactions.SolsticeEvent:GetDescendants()) do
+
+                        if v.Name == "CatchModel" then
+
+                            for i=1, 50 do wait()
+
+                                TeleportSeat(v.BasePart.CFrame.Position + Vector3.new(0,10,0))
+
+                            end
+
+                            task.wait(0.8)
+
+                            RE("GetCatchObjectRemote"):FireServer(v)
+
+                            task.wait(0.8)
+
+                            break
+
+                        end
+
+                    end
+
+                end)
+
+            end
+
+        end)
+
+    else
+
+    	beenclickevent4 = false
+
+    end
+
+end)
+
+section1:addButton("Auto Farm Star", function()
+
+    if beenclickevent5 == false then
+
+        beenclickevent5 = true
+
+        task.wait()
+
+        spawn(function()
+
+            while wait() and beenclickevent5 do
+
+                    pcall(function()
+
+                        for i=1, 50 do wait()
+
+                            TeleportSeat(workspace.Interactions.SolsticeEvent.CatchObject.StartZone.Part.Position + Vector3.new(0,25,0))
+
+                        end
+
+                        for _,v in pairs(workspace.Interactions.SolsticeEvent:GetDescendants()) do
+
+                            if v.Name == "CatchModel" and beenclickevent5 then
+
+                                for i=1, 50 do wait()
+
+                                    TeleportSeat(v.BasePart.CFrame.Position + Vector3.new(0,10,0))
+
+                                end
+
+                                task.wait(0.8)
+
+                                RE("GetCatchObjectRemote"):FireServer(v)
+
+                                RF("GetMinigameRewardRemote"):InvokeServer("1")
+
+                                task.wait(0.8)
+
+                            end
+
+                        end
+
+                    end)
+
+                end
+
+            end)
+
+        else
+
+    	    beenclickevent5 = false
+
+        end
+
+end)
+
+
+
+local section1 = page:addSection("Auto-Normal")
+
+section1:addButton("Auto Egg", function()
+
+if beenclick1 == false then
+
+    beenclick1 = true
+
+    task.wait()
+
+    repeat
+
+            for i, v in pairs(workspace.Interactions.Nodes.Harvest.Eggs.ActiveNodes:GetChildren()) do
+
+                if v:IsA("Model") and v:FindFirstChildWhichIsA("BasePart") and beenclick1 == true then
+
+                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =
+
+                        v:FindFirstChildWhichIsA("BasePart").CFrame * CFrame.new(1, 1, 0)
+
+                    wait(1)
+
+                    wait()
+
+                    game.Players.LocalPlayer.Character.Humanoid:MoveTo(
+
+                        v:FindFirstChildWhichIsA("BasePart").Position
+
+                    )
+
+                    local VirtualInputManager = game:GetService("VirtualInputManager")
+
+                    VirtualInputManager:SendKeyEvent(true, "E", false, game)
+
+                    task.wait(14)
+
+                    print(beenclick1)
+
+                end
+
+             end
+
+             task.wait()
+
+    until beenclick1 == false
+
+    else
+
+    	beenclick1 = false
+
+    end
+
+end)
+
+section1:addButton("Auto Magic", function()
+
+if beenclickMagic == false then
+
+    beenclickMagic = true
+
+    task.wait()
+
+    repeat
+
+            for i, v in pairs(Workspace.Interactions.Nodes.Harvest.Magic.ActiveNodes:GetChildren()) do
+
+               if v:IsA("Model") and v:FindFirstChildWhichIsA("BasePart") and beenclickMagic == true then
+
+                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =
+
+                        v:FindFirstChildWhichIsA("BasePart").CFrame * CFrame.new(1, 1, 0)
+
+                    wait(1)
+
+                    wait()
+
+                    game.Players.LocalPlayer.Character.Humanoid:MoveTo(
+
+                        v:FindFirstChildWhichIsA("BasePart").Position
+
+                    )
+
+                    local VirtualInputManager = game:GetService("VirtualInputManager")
+
+                    VirtualInputManager:SendKeyEvent(true, "E", false, game)
+
+                    task.wait(12)
+
+                    print(beenclickMagic)
+
+                end
+
+             end
+
+             task.wait()
+
+    until beenclickMagic == false
+
+    else
+
+    	beenclickMagic = false
+
+    end
+
+end)
+
+section1:addButton("Auto Food", function()
+
+if beenclickFood == false then
+
+    beenclickFood = true
+
+    task.wait()
+
+    repeat
+
+            for i, v in pairs(Workspace.Interactions.Nodes.Harvest.Food.ActiveNodes:GetChildren()) do
+
+               if v:IsA("Model") and v:FindFirstChildWhichIsA("BasePart") and beenclickFood == true then
+
+                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =
+
+                        v:FindFirstChildWhichIsA("BasePart").CFrame * CFrame.new(1, 1, 0)
+
+                    wait(1)
+
+                    wait()
+
+                    game.Players.LocalPlayer.Character.Humanoid:MoveTo(
+
+                        v:FindFirstChildWhichIsA("BasePart").Position
+
+                    )
+
+                    local VirtualInputManager = game:GetService("VirtualInputManager")
+
+                    VirtualInputManager:SendKeyEvent(true, "E", false, game)
+
+                    task.wait(12)
+
+                    print(beenclickFood)
+
+                end
+
+             end
+
+             task.wait()
+
+    until beenclickFood == false
+
+    else
+
+    	beenclickFood = false
+
+    end
+
+end)
+
+section1:addButton("Auto Resources", function()
+
+if beenclickResources == false then
+
+    beenclickResources = true
+
+    task.wait()
+
+    repeat
+
+            for i, v in pairs(Workspace.Interactions.Nodes.Harvest.Resources.ActiveNodes:GetChildren()) do
+
+               if v:IsA("Model") and v:FindFirstChildWhichIsA("BasePart") and beenclickResources == true then
+
+                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =
+
+                        v:FindFirstChildWhichIsA("BasePart").CFrame * CFrame.new(1, 1, 0)
+
+                    wait(1)
+
+                    wait()
+
+                    game.Players.LocalPlayer.Character.Humanoid:MoveTo(
+
+                        v:FindFirstChildWhichIsA("BasePart").Position
+
+                    )
+
+                    local VirtualInputManager = game:GetService("VirtualInputManager")
+
+                    VirtualInputManager:SendKeyEvent(true, "E", false, game)
+
+                    task.wait(12)
+
+                    print(beenclickResources)
+
+                end
+
+             end
+
+             task.wait()
+
+    until beenclickResources == false
+
+    else
+
+    	beenclickResources = false
+
+    end
+
+end)
+
+section1:addButton("Auto Fishing", function()
+
+if beenclickFishing == false then
+
+    beenclickFishing = true
+
+    task.wait()
+
+    repeat
+
+            local Fish = require(game:GetService("ReplicatedStorage")._replicationFolder.FishingClient)
+
+                local StartCasting = Fish.StartCasting
+
+                local Click = Fish.Click
+
+                StartCasting(Fish, StartCasting)
+
+                if Fish.Snagged == true then
+
+                    Fish.ReelSignal:Fire()
+
+                    if game.Players.LocalPlayer.PlayerGui.FishingGui.ContainerFrame.ReelingFrame.BarLabel.InnerLabel.PointerLabel.Position.X.Scale <= game.Players.LocalPlayer.PlayerGui.FishingGui.ContainerFrame.ReelingFrame.BarLabel.InnerLabel.SafeBarLabel.Position.X.Scale + .02 then
+
+                        Click(Fish, Fish.Click)
+
+                    end
+
+                end
+
+			task.wait()
+
+    until beenclickFishing == false
+
+    else
+
+    	beenclickFishing = false
+
+    end
+
+end)
+
+end)
+
+if not abcd then
+
+setclipboard(tostring(efgh))
+
+end
